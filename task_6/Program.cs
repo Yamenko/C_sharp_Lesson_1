@@ -7,17 +7,25 @@ Console.WriteLine("Введите число:");
 
 while (true)
 {
-    int num = Convert.ToInt32(Console.ReadLine()!);
-    string outStr = "";
+	try
+	{
+		int num = Convert.ToInt32(Console.ReadLine());
+		string outStr = "";
 
-    // выход по условию
-    if (num == 0) { break; }
+		// выход по условию
+		if (num == 0) { break; }
 
-    // Определение четности
-    if ((num % 2) == 0) { outStr = "Четное"; }
-    else { outStr = "Не четное"; }
+		// Определение четности
+		if ((num % 2) == 0) { outStr = "Четное"; }
+		else { outStr = "Не четное"; }
 
-    // Вывод в консоль.
-    Console.WriteLine(outStr);
+		// Вывод в консоль.
+		Console.WriteLine(outStr);
+	}
+	// защита от ввода не числа!
+	catch
+	{
+		Console.WriteLine("Не число!");
+	}
 }
 
